@@ -72,8 +72,17 @@ func TestSendChatAction(t *testing.T) {
 	}
 }
 
-func TestSendPhotoResponse(t *testing.T) {
-	_, err := b.SendPhoto(ID, "AgADAgADEaoxGx7ijwABUsJzu7MrSKBKDIMqAATYfJAUtDsU1ajtAQABAg", &SendPhotoOptions{Caption: "Caption for photo"})
+func TestSendPhotoById(t *testing.T) {
+	_, err := b.SendPhotoById(ID, "AgADAgADEaoxGx7ijwABUsJzu7MrSKBKDIMqAATYfJAUtDsU1ajtAQABAg", &SendPhotoOptions{Caption: "Caption for photo"})
+
+	if err != nil {
+		fmt.Println(err.Error())
+		t.Fail()
+	}
+}
+
+func TestSendPhoto(t *testing.T) {
+	_, err := b.SendPhotoById(ID, "toster.png", &SendPhotoOptions{Caption: "SendPhoto test"})
 
 	if err != nil {
 		fmt.Println(err.Error())
