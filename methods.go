@@ -3,15 +3,15 @@ package telegarobot
 import (
 	// "github.com/kr/pretty"
 
-	"bytes"
+	// "bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io"
-	"mime/multipart"
+	// "io"
+	// "mime/multipart"
 	"net/url"
-	"os"
-	"path/filepath"
+	// "os"
+	// "path/filepath"
 	"strconv"
 )
 
