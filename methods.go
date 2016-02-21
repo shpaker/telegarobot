@@ -3,10 +3,15 @@ package telegarobot
 import (
 	// "github.com/kr/pretty"
 
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
+	"mime/multipart"
 	"net/url"
+	"os"
+	"path/filepath"
 	"strconv"
 )
 
@@ -248,3 +253,62 @@ func (bot *Bot) SendPhotoById(chatId, photoId string, options *SendPhotoOptions)
 
 	return sendPhotoResponse.Result, nil
 }
+
+// func (bot *Bot) SendPhoto(chatId, path string, options *SendPhotoOptions) (*Message, error) {
+// 	type SendPhotoResponse struct {
+// 		response
+// 		Result *Message
+// 	}
+
+// 	sendPhotoResponse := &SendPhotoResponse{}
+
+// 	values := url.Values{}
+// 	values.Set("chat_id", chatId)
+
+// 	/**/
+// 	file, err := os.Open(path)
+// 	if err != nil {
+// 		return nil, err
+// 	}
+// 	defer file.Close()
+
+// 	body := &bytes.Buffer{}
+// 	writer := multipart.NewWriter(body)
+// 	part, err := writer.CreateFormFile("photo", filepath.Base(path))
+// 	if err != nil {
+// 		return nil, err
+// 	}
+// 	_, err = io.Copy(part, file)
+
+// 	err = writer.Close()
+// 	if err != nil {
+// 		return nil, err
+// 	}
+
+// 	/**/
+
+// 	if options != nil {
+// 		switch {
+// 		case options.Caption != "":
+// 			values.Set("caption", options.Caption)
+// 		case options.ReplyToMessageId != 0:
+// 			values.Set("reply_to_message_id", strconv.Itoa(options.ReplyToMessageId))
+// 		}
+// 	}
+
+// 	data, err := bot.execApi("sendPhoto", values.Encode())
+// 	if err != nil {
+// 		return nil, err
+// 	}
+
+// 	err = json.Unmarshal(data, &sendPhotoResponse)
+// 	if err != nil {
+// 		return nil, err
+// 	}
+
+// 	if !sendPhotoResponse.Ok {
+// 		return nil, errors.New(sendPhotoResponse.Description)
+// 	}
+
+// 	return sendPhotoResponse.Result, nil
+// }

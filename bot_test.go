@@ -81,6 +81,7 @@ func TestSendPhotoById(t *testing.T) {
 	}
 }
 
+/*
 func TestSendPhoto(t *testing.T) {
 	_, err := b.SendPhotoById(ID, "toster.png", &SendPhotoOptions{Caption: "SendPhoto test"})
 
@@ -89,3 +90,4 @@ func TestSendPhoto(t *testing.T) {
 		t.Fail()
 	}
 }
+*/
