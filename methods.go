@@ -211,7 +211,7 @@ func (bot *Bot) SendChatAction(chatId, action string) (bool, error) {
 }
 
 // Use this method to send photos. On success, the sent Message is returned.
-func (bot *Bot) SendPhoto(chatId, photoId string, options *SendPhotoOptions) (*Message, error) {
+func (bot *Bot) SendPhotoById(chatId, photoId string, options *SendPhotoOptions) (*Message, error) {
 	type SendPhotoResponse struct {
 		response
 		Result *Message
