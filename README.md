@@ -52,7 +52,7 @@ func main() {
 - [ ] **TYPES**
   - [x] User
   - [x] Chat
-  - [ ] Message
+  - [x] Message
   - [ ] PhotoSize
   - [ ] Audio
   - [ ] Document
@@ -61,11 +61,11 @@ func main() {
   - [ ] Voice
   - [ ] Contact
   - [ ] Location
-  - [ ] Update
+  - [x] Update
   - [ ] InputFile
   - [ ] UserProfilePhotos
   - [ ] ReplyKeyboardMarkup
   - [ ] ReplyKeyboardHide
   - [ ] ForceReply
   - [ ] File (used for downloading)
- - [ ] **Tests**
+- [ ] **Tests**
